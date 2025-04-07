@@ -171,6 +171,7 @@
             border: 1px solid rgba(0, 255, 136, 0.1);
             transition: 0.3s;
             overflow: hidden;
+            text-align: center;
         }
 
         .card:hover {
@@ -182,9 +183,27 @@
             padding: 25px;
             background: linear-gradient(45deg, var(--primary), var(--dark));
             position: relative;
+            text-align: center;
         }
 
         .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .card-header-ai {
+            padding: 25px;
+            background: linear-gradient(45deg, var(--light), var(--light));
+            position: relative;
+            text-align: center;
+        }
+
+        .card-header-ai::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -285,19 +304,28 @@
                 border-bottom: 1px solid rgba(0, 255, 136, 0.1);
             }
         }
+
+        .logo-ai {
+            width: auto;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <header class="cyber-border">
+    <section id="home">
         <div class="container">
             <h1>เทคโนโลยีปัญญาประดิษฐ์</h1>
             <p>จากพื้นฐานสู่นวัตกรรมสมัยใหม่: เรียนรู้ เข้าใจ และประยุกต์ใช้ AI ในยุคดิจิทัล</p>
         </div>
+    </section>
     </header>
 
     <nav>
         <div class="container nav-container">
-            <div class="logo">AI Learning</div>
+            <div class="logo">
+                <a href="#home">AI Learning</a>
+            </div>
             <ul class="menu">
                 <li><a href="#overview">ภาพรวม</a></li>
                 <li><a href="#fundamental">พื้นฐาน AI</a></li>
@@ -310,6 +338,18 @@
     </nav>
 
     <main class="container">
+        <h2></h2>
+
+        <!-- คำนำ -->
+        <section id="overview">
+            <h2>คำนำ</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>ในยุคที่ข้อมูลข่าวสารไหลบ่าท่วมท้น การตามให้ทันกระแสและเทคโนโลยีใหม่ๆ เป็นสิ่งสำคัญอย่างยิ่ง ไม่ว่าคุณจะเป็นนักการตลาด นักวิจัย นักพัฒนา หรือเพียงแค่ผู้ที่สนใจในเทคโนโลยี AI เครื่องมือเหล่านี้จะเป็นกุญแจสำคัญที่ช่วยให้คุณเข้าใจโลกที่เปลี่ยนแปลงไปอย่างรวดเร็วได้ดียิ่งขึ้น</p>
+                </div>
+            </div>
+        </section>
+
         <!-- ภาพรวม -->
         <section id="overview">
             <h2>ภาพรวมของปัญญาประดิษฐ์</h2>
@@ -427,12 +467,13 @@
             <h2>สื่อการสอน</h2>
             <div class="card-container">
 
+                <!-- Google Trends -->
                 <div class="card">
-                    <div class="card-header">
-                        <i class="icon ion-md-book"></i>
-                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    <div class="card-header-ai">
+                        <img class="logo-ai" src="scr/Google-Trends-logo.png">
                     </div>
                     <div class="card-body">
+                        <p>Google Trends จับกระแสความนิยมทั่วโลกแบบเรียลไทม์ รู้ก่อนใครว่าคนกำลังสนใจอะไร</p>
                         <div class="media-links">
                             <div class="media-template">
                                 <div class="media-item">
@@ -471,12 +512,13 @@
                     </div>
                 </div>
 
+                <!-- Google Gemini -->
                 <div class="card">
-                    <div class="card-header">
-                        <i class="icon ion-md-book"></i>
-                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    <div class="card-header-ai">
+                        <img class="logo-ai" src="scr/Google-Gemini-logo.png">
                     </div>
                     <div class="card-body">
+                        <p>Google Gemini ผู้ช่วยอัจฉริยะที่พร้อมตอบทุกคำถามและทำงานต่างๆ ให้คุณได้อย่างรวดเร็ว</p>
                         <div class="media-links">
                             <div class="media-template">
                                 <div class="media-item">
@@ -515,12 +557,103 @@
                     </div>
                 </div>
 
+                <!-- OpenAI ChatGPT -->
                 <div class="card">
-                    <div class="card-header">
-                        <i class="icon ion-md-book"></i>
-                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    <div class="card-header-ai">
+                        <img class="logo-ai" src="scr/ChatGPT-Logo.png">
                     </div>
                     <div class="card-body">
+                        <p>OpenAI ChatGPT สุดยอดโมเดลภาษาที่สามารถสร้างสรรค์บทสนทนาและเนื้อหาได้อย่างน่าทึ่ง</p>
+                        <div class="media-links">
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>สไลด์การสอน AI พื้นฐาน</h4>
+                                        <a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-laptop"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>Workshop: พัฒนาโมเดล AI ด้วย Python</h4>
+                                        <a href="#" target="_blank" class="neon-text">เข้าร่วม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-journal"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>บทความวิชาการเกี่ยวกับ AI</h4>
+                                        <a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perplexity -->
+                <div class="card">
+                    <div class="card-header-ai">
+                        <img class="logo-ai" src="scr/Perplexity_AI_logo.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Perplexity </p>
+                        <div class="media-links">
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>สไลด์การสอน AI พื้นฐาน</h4>
+                                        <a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-laptop"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>Workshop: พัฒนาโมเดล AI ด้วย Python</h4>
+                                        <a href="#" target="_blank" class="neon-text">เข้าร่วม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-journal"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>บทความวิชาการเกี่ยวกับ AI</h4>
+                                        <a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anthropic Claude -->
+                <div class="card">
+                    <div class="card-header-ai">
+                        <img class="logo-ai" src="scr/Claude_AI_logo.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Anthropic Claude </p>
                         <div class="media-links">
                             <div class="media-template">
                                 <div class="media-item">
@@ -565,7 +698,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2023 AI Learning Platform | พัฒนาโดย AMONTAP DUMLERD</p>
+            <p>© 2023 AI Learning Platform | พัฒนาโดย AMONTAP_WORK4</p>
         </div>
     </footer>
 
