@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เทคโนโลยีปัญญาประดิษฐ์: จากพื้นฐานสู่นวัตกรรมสมัยใหม่</title>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A76F0;
+            --primary-dark: #1A4D9F;
+            --secondary: #00FF88;
+            --dark: #0A192F;
+            --light: #F8F9FF;
+            --cyber-blue: #00F7FF;
+            --neon-purple: #BD00FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .cyber-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--cyber-blue), transparent);
+            animation: scanline 4s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 Q 50 100 100 0 L 100 100 L 0 100 Z" fill="%230A192F"/></svg>');
+        }
+
+        header h1 {
+            margin-bottom: 25px;
+            font-size: 3rem;
+            text-shadow: 0 0 15px rgba(42, 118, 240, 0.5);
+        }
+
+        nav {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--cyber-blue);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--cyber-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 30px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: 0.3s;
+        }
+
+        .menu a:hover::before {
+            width: 100%;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        section {
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            padding-left: 20px;
+            border-left: 5px solid var(--cyber-blue);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .card-header {
+            padding: 25px;
+            background: linear-gradient(45deg, var(--primary), var(--dark));
+            position: relative;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .media-links {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--cyber-blue);
+        }
+
+        .media-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .media-item:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateX(10px);
+        }
+
+        .media-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .media-template {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px dashed var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .neon-text {
+            color: var(--cyber-blue);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .neon-text:hover {
+            text-shadow: 0 0 8px var(--cyber-blue);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        footer {
+            background: var(--dark);
+            padding: 60px 0;
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 25, 47, 0.95);
+            }
+
+            .menu.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 0;
+                padding: 15px;
+                border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="cyber-border">
+        <div class="container">
+            <h1>เทคโนโลยีปัญญาประดิษฐ์</h1>
+            <p>จากพื้นฐานสู่นวัตกรรมสมัยใหม่: เรียนรู้ เข้าใจ และประยุกต์ใช้ AI ในยุคดิจิทัล</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">AI Learning</div>
+            <ul class="menu">
+                <li><a href="#overview">ภาพรวม</a></li>
+                <li><a href="#fundamental">พื้นฐาน AI</a></li>
+                <li><a href="#advanced">AI ขั้นสูง</a></li>
+                <li><a href="#applications">การประยุกต์ใช้</a></li>
+                <li><a href="#resources">สื่อการสอน</a></li>
+            </ul>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ภาพรวม -->
+        <section id="overview">
+            <h2>ภาพรวมของปัญญาประดิษฐ์</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>ปัญญาประดิษฐ์หรือ AI เป็นเส้นทางการพัฒนาทางเทคโนโลยีที่พยายามทำให้คอมพิวเตอร์สามารถคิด เรียนรู้ และทำงานได้คล้ายมนุษย์ โดยใช้ระบบที่ซับซ้อนในการประมวลข้อมูล เรียนรู้จากรูปแบบ และตัดสินใจบนพื้นฐานของข้อมูลนั้น</p>
+                    <p>ปัจจุบัน AI ได้เข้ามามีบทบาทในชีวิตประจำวันของเราอย่างกว้างขวาง ตั้งแต่ผู้ช่วยเสียงอัจฉริยะในโทรศัพท์มือถือ ระบบแนะนำในแพลตฟอร์มสตรีมมิ่ง ไปจนถึงรถยนต์ไร้คนขับและระบบวินิจฉัยทางการแพทย์</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machine Learning -->
+        <section id="fundamental">
+            <h2>พื้นฐาน AI</h2>
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon ion-md-analytics"></i>
+                    <h3>การเรียนรู้ของเครื่อง (Machine Learning)</h3>
+                </div>
+                <div class="card-body">
+                    <p>Machine Learning คือกระบวนการที่คอมพิวเตอร์เรียนรู้จากข้อมูล แทนการเขียนโปรแกรมแบบเดิมที่ต้องระบุทุกขั้นตอนอย่างชัดเจน ระบบจะค้นหารูปแบบในข้อมูลและปรับปรุงประสิทธิภาพตามประสบการณ์ที่ได้รับ</p>
+                    <p>แบ่งเป็น 3 ประเภทหลัก:</p>
+                    <ul style="list-style: none; padding-left: 20px; margin: 15px 0;">
+                        <li>• การเรียนรู้แบบมีผู้สอน (Supervised Learning)</li>
+                        <li>• การเรียนรู้แบบไม่มีผู้สอน (Unsupervised Learning)</li>
+                        <li>• การเรียนรู้แบบเสริมกำลัง (Reinforcement Learning)</li>
+                    </ul>
+                    <!-- media link --
+                    <div class="media-links">
+                        <div class="media-template">
+                            <div class="media-item">
+                                <div class="media-icon">
+                                    <i class="icon ion-md-videocam"></i>
+                                </div>
+                                <div class="media-content">
+                                    <h4>คอร์สเรียน Machine Learning</h4>
+                                    <a href="#" target="_blank" class="neon-text">เริ่มเรียน →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- AI ขั้นสูง -->
+        <section id="advanced">
+            <h2>AI ขั้นสูง</h2>
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon ion-md-globe"></i>
+                    <h3>Deep Learning และ Neural Networks</h3>
+                </div>
+                <div class="card-body">
+                    <p>Deep Learning เป็นสาขาย่อยของ Machine Learning ที่ใช้โครงสร้างแบบ Neural Networks หลายชั้น (Deep Neural Networks) ในการเรียนรู้จากข้อมูลจำนวนมาก</p>
+                    <p>เทคโนโลยีนี้ช่วยให้คอมพิวเตอร์สามารถประมวลผลข้อมูลที่ซับซ้อนได้ เช่น รูปภาพ เสียง และภาษาธรรมชาติ ซึ่งเป็นพื้นฐานของเทคโนโลยีล้ำสมัยในปัจจุบัน เช่น การประมวลผลภาษาธรรมชาติ (NLP) และ Computer Vision</p>
+                    <!-- media link --
+                    <div class="media-links">
+                        <div class="media-template">
+                            <div class="media-item">
+                                <div class="media-icon">
+                                    <i class="icon ion-md-code-working"></i>
+                                </div>
+                                <div class="media-content">
+                                    <h4>แบบจำลอง Neural Networks เบื้องต้น</h4>
+                                    <a href="#" target="_blank" class="neon-text">ดูตัวอย่าง →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- การประยุกต์ใช้ -->
+        <section id="applications">
+            <h2>การประยุกต์ใช้</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-medkit"></i>
+                        <h3>AI ในการแพทย์</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>ปัญญาประดิษฐ์ช่วยปฏิวัติวงการแพทย์ด้วยการวินิจฉัยโรคที่แม่นยำ การวิเคราะห์ภาพถ่ายทางการแพทย์ การค้นพบยาใหม่ และการติดตามสุขภาพผู้ป่วยแบบเรียลไทม์</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-car"></i>
+                        <h3>ยานยนต์อัตโนมัติ</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>รถยนต์ไร้คนขับใช้ AI ในการรับรู้สภาพแวดล้อม วางแผนเส้นทาง และตัดสินใจในสถานการณ์การจราจรที่ซับซ้อน เพื่อเพิ่มความปลอดภัยและประสิทธิภาพบนท้องถนน</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-chatboxes"></i>
+                        <h3>ผู้ช่วยเสมือนและ Chatbots</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>ระบบโต้ตอบอัตโนมัติที่ใช้ NLP เพื่อเข้าใจและตอบสนองต่อคำถามของผู้ใช้ ช่วยในงานบริการลูกค้า การศึกษา และการทำงานในชีวิตประจำวัน</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- สื่อการสอน -->
+        <section id="resources">
+            <h2>สื่อการสอน</h2>
+            <div class="card-container">
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-book"></i>
+                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="media-links">
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>สไลด์การสอน AI พื้นฐาน</h4>
+                                        <a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-laptop"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>Workshop: พัฒนาโมเดล AI ด้วย Python</h4>
+                                        <a href="#" target="_blank" class="neon-text">เข้าร่วม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-journal"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>บทความวิชาการเกี่ยวกับ AI</h4>
+                                        <a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-book"></i>
+                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="media-links">
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>สไลด์การสอน AI พื้นฐาน</h4>
+                                        <a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-laptop"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>Workshop: พัฒนาโมเดล AI ด้วย Python</h4>
+                                        <a href="#" target="_blank" class="neon-text">เข้าร่วม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-journal"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>บทความวิชาการเกี่ยวกับ AI</h4>
+                                        <a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon ion-md-book"></i>
+                        <h3>แหล่งเรียนรู้เพิ่มเติม</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="media-links">
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>สไลด์การสอน AI พื้นฐาน</h4>
+                                        <a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-laptop"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>Workshop: พัฒนาโมเดล AI ด้วย Python</h4>
+                                        <a href="#" target="_blank" class="neon-text">เข้าร่วม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-template">
+                                <div class="media-item">
+                                    <div class="media-icon">
+                                        <i class="icon ion-md-journal"></i>
+                                    </div>
+                                    <div class="media-content">
+                                        <h4>บทความวิชาการเกี่ยวกับ AI</h4>
+                                        <a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 AI Learning Platform | พัฒนาโดย AMONTAP DUMLERD</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.card').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (menu.classList.contains('active')) {
+                        menu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
