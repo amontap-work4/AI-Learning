@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Learning Platform - เรียนรู้เทคโนโลยี AI จากพื้นฐานสู่ขั้นสูงและการประยุกต์ใช้งานจริง">
     <title>AI Learning</title>
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -143,7 +144,7 @@
         }
 
         .light-mode .menu a {
-            color: var();
+            color: var(--text-dark);
         }
 
         .menu a::before {
@@ -291,9 +292,9 @@
             flex: 1;
         }
 
-        .media-content h4 {
+        .media-content h3, .media-content h4 {
             margin-bottom: 5px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -410,7 +411,6 @@
             }
         }
     </style>
-
 </head>
 <body>
     <header class="cyber-border">
@@ -477,34 +477,47 @@
                         <li>• การเรียนรู้แบบไม่มีผู้สอน (Unsupervised Learning)</li>
                         <li>• การเรียนรู้แบบเสริมกำลัง (Reinforcement Learning)</li>
                     </ul>
+                    
                     <div class="media-links">
+
                         <div class="media-template">
+
                             <div class="media-item">
-
+                                
                                 <div class="media-content">
-                                    <h3 class="icon ion-md-document"> วิดีโอการสอน AI พื้นฐาน</h3>
+                                    <h3><i class="icon ion-md-document"></i> วิดีโอการสอน AI พื้นฐาน</h3>
                                     <div>
-                                        <iframe src="videos/พื้นฐาน Ai 01.mp4" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="พื้นฐานของปัญญาประดิษฐ์ (AI)"></iframe>
+                                        <iframe src="videos/ai_basics_01.mp4" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="พื้นฐานของปัญญาประดิษฐ์ (AI)"></iframe>
                                     </div>
                                     <div>
-                                        <a href="videos/พื้นฐาน Ai 01.mp4" target="_blank" class="neon-text" >ดาวน์โหลด</a>
-                                    </div>
-                                </div>
-
-                                <div class="media-content">
-                                    <h3 class="icon ion-md-document"> สไลด์การสอน AI พื้นฐาน</h3>
-                                    <div>
-                                        <iframe src="https://gamma.app/embed/jws3pn10rnjla65" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="พื้นฐานของปัญญาประดิษฐ์ (AI)"></iframe>
-                                    </div>
-                                    <div>
-                                        <a href="slide/AI-Learning.pdf" target="_blank" class="neon-text" >ดาวน์โหลด ,</a>
-                                        <a href="slide/AI-Learning.pdf" target="_blank" class="neon-text" >ดาวน์โหลด สำรอง</a>
+                                        <a href="videos/ai_basics_01.mp4" target="_blank" class="neon-text">ดาวน์โหลด</a>
                                     </div>
                                 </div>
 
                             </div>
+
+                            <div class="media-item">
+
+                                <div class="media-content">
+                                    <h3><i class="icon ion-md-document"></i> สไลด์การสอน AI พื้นฐาน</h3>
+                                    <div>
+                                        <iframe src="https://gamma.app/embed/jws3pn10rnjla65" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="พื้นฐานของปัญญาประดิษฐ์ (AI)"></iframe>
+                                    </div>
+                                    <div>
+                                        <a href="slide/AI-Learning.pdf" target="_blank" class="neon-text">ดาวน์โหลด</a> 
+                                        <br>
+                                        <a href="slide/AI-Learning.pdf" target="_blank" class="neon-text">ดาวน์โหลด สำรอง</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            </div>
+
                         </div>
+
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -568,36 +581,26 @@
                 <!-- Google Trends -->
                 <div class="card">
                     <div class="card-header-ai">
-                        <img class="logo-ai" src="scr/Google-Trends-logo.png" alt="Google Trends Logo">
+                        <img class="logo-ai" src="src/Google-Trends-logo.png" alt="Google Trends Logo">
                     </div>
                     <div class="card-body">
                         <p>Google Trends จับกระแสความนิยมทั่วโลกแบบเรียลไทม์ รู้ก่อนใครว่าคนกำลังสนใจอะไร</p>
                         <div class="media-links">
                             <div class="media-template">
                                 <div class="media-item">
-                                    <!--
-                                    <div class="media-icon">
-                                        <i class="icon ion-md-document"></i>
-                                    </div>
-                                    -->
                                     <div class="media-content">
-                                        <h3 class="icon ion-md-document"> สไลด์การสอน Google Trends</h3>
+                                        <h3><i class="icon ion-md-document"></i> สไลด์การสอน Google Trends</h3>
                                         <div>
                                             <iframe src="https://gamma.app/embed/jws3pn10rnjla65" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="พื้นฐานการใช้งาน"></iframe>
                                         </div>
-                                        <a href="slide/Basic-Use-Google_Trends.pdf" target="_blank" class="neon-text" >ดาวน์โหลด</a>
+                                        <a href="slide/Basic-Use-Google_Trends.pdf" target="_blank" class="neon-text">ดาวน์โหลด</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="media-template">
                                 <div class="media-item">
-                                    <!--
-                                    <div class="media-icon">
-                                        <i class="icon ion-md-laptop"></i>
-                                    </div>
-                                    -->
                                     <div class="media-content">
-                                        <h3 class="icon ion-md-laptop">Workshop: ตามกระแส และทันสมัยด้วย Google Trends</h3>
+                                        <h3><i class="icon ion-md-laptop"></i> Workshop: ตามกระแส และทันสมัยด้วย Google Trends</h3>
                                         <div>
                                             <iframe width="auto" height="auto" src="https://www.youtube.com/embed/Qw6Ii5ZvSNQ?si=rdmaM80E7dpXqYQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                         </div>
@@ -623,7 +626,7 @@
                 <!-- Google Gemini -->
                 <div class="card">
                     <div class="card-header-ai">
-                        <img class="logo-ai" src="scr/Google-Gemini-logo.png" alt="Google Gemini Logo">
+                        <img class="logo-ai" src="src/Google-Gemini-logo.png" alt="Google Gemini Logo">
                     </div>
                     <div class="card-body">
                         <p>Google Gemini ผู้ช่วยอัจฉริยะที่พร้อมตอบทุกคำถามและทำงานต่างๆ ให้คุณได้อย่างรวดเร็ว</p>
@@ -668,44 +671,33 @@
                 <!-- OpenAI ChatGPT -->
                 <div class="card">
                     <div class="card-header-ai">
-                        <img class="logo-ai" src="scr/ChatGPT-Logo.png" alt="ChatGPT Logo">
+                        <img class="logo-ai" src="src/ChatGPT-Logo.png" alt="ChatGPT Logo">
                     </div>
                     <div class="card-body">
                         <p>OpenAI ChatGPT สุดยอดโมเดลภาษาที่สามารถสร้างสรรค์บทสนทนาและเนื้อหาได้อย่างน่าทึ่ง</p>
                         <div class="media-links">
                             <div class="media-template">
                                 <div class="media-item">
-                                    <div class="media-icon">
-                                        <i class="icon ion-md-document"></i>
-                                    </div>
                                     <div class="media-content">
-                                        <h4>สไลด์การสอน</h4>
-                                        <h4>OpenAI ChatGPT</h4>
+                                        <h4>สไลด์การสอน OpenAI ChatGPT</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a></h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="media-template">
                                 <div class="media-item">
-                                    <div class="media-icon">
-                                        <i class="icon ion-md-laptop"></i>
-                                    </div>
                                     <div class="media-content">
                                         <h4>Workshop:</h4>
                                         <h4>พี่ตอบได้ทุกอย่าง</h4>
                                         <h4>แต่... ต้องถามพี่ให้เป็น</h4>
-                                        <h4>><a href="#" target="_blank" class="neon-text">เข้าร่วม →</a></h4>
+                                        <h4><a href="#" target="_blank" class="neon-text">เข้าร่วม →</a></h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="media-template">
                                 <div class="media-item">
-                                    <div class="media-icon">
-                                        <i class="icon ion-md-journal"></i>
-                                    </div>
                                     <div class="media-content">
-                                        <h4>บทความวิชาการเกี่ยวกับ</h4>
-                                        <h4>OpenAI ChatGPT</h4>
+                                        <h4>บทความวิชาการเกี่ยวกับ OpenAI ChatGPT</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a></h4>
                                     </div>
                                 </div>
@@ -717,7 +709,7 @@
                 <!-- Perplexity -->
                 <div class="card">
                     <div class="card-header-ai">
-                        <img class="logo-ai" src="scr/Perplexity_AI_logo.png">
+                        <img class="logo-ai" src="src/Perplexity_AI_logo.png" alt="Perplexity AI Logo">
                     </div>
                     <div class="card-body">
                         <p>Perplexity ค้นหาข้อมูลเชิงลึกและสรุปผลลัพธ์ได้อย่างแม่นยำ พร้อมแหล่งอ้างอิงที่เชื่อถือได้</p>
@@ -728,8 +720,7 @@
                                         <i class="icon ion-md-document"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>สไลด์การสอน</h4>
-                                        <h4>Perplexity</h4>
+                                        <h4>สไลด์การสอน Perplexity</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a></h4>
                                     </div>
                                 </div>
@@ -740,8 +731,7 @@
                                         <i class="icon ion-md-laptop"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>Workshop:</h4>
-                                        <h4>หากข้อมูลมีหลายแหล่งที่มา</h4>
+                                        <h4>Workshop: หากข้อมูลมีหลายแหล่งที่มา</h4>
                                         <h4>ต้องทำอย่างไร</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">เข้าร่วม →</a></h4>
                                     </div>
@@ -753,8 +743,7 @@
                                         <i class="icon ion-md-journal"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>บทความวิชาการเกี่ยวกับ</h4>
-                                        <h4>Perplexity</h4>
+                                        <h4>บทความวิชาการเกี่ยวกับ Perplexity</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a></h4>
                                     </div>
                                 </div>
@@ -766,7 +755,7 @@
                 <!-- Anthropic Claude -->
                 <div class="card">
                     <div class="card-header-ai">
-                        <img class="logo-ai" src="scr/Claude_AI_logo.png">
+                        <img class="logo-ai" src="src/Claude_AI_logo.png" alt="Anthropic Claude Logo">
                     </div>
                     <div class="card-body">
                         <p>Anthropic Claude ผู้ช่วย AI ที่เน้นความปลอดภัยและมีจริยธรรม พร้อมให้คุณทำงานได้อย่างมั่นใจ</p>
@@ -777,8 +766,7 @@
                                         <i class="icon ion-md-document"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>สไลด์การสอน</h4>
-                                        <h4>Anthropic Claude</h4>
+                                        <h4>สไลด์การสอน Anthropic Claude</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">ดาวน์โหลด →</a></h4>
                                     </div>
                                 </div>
@@ -789,8 +777,7 @@
                                         <i class="icon ion-md-laptop"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>Workshop:</h4>
-                                        <h4>Anthropic Claude ผู้ช่วยที่ฉลาด และมีความเป็นมนุษย์ที่สุด</h4>
+                                        <h4>Workshop: Anthropic Claude ผู้ช่วยที่ฉลาด และมีความเป็นมนุษย์ที่สุด</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">เข้าร่วม →</a></h4>
                                     </div>
                                 </div>
@@ -801,8 +788,7 @@
                                         <i class="icon ion-md-journal"></i>
                                     </div>
                                     <div class="media-content">
-                                        <h4>บทความวิชาการเกี่ยวกับ</h4>
-                                        <h4>Anthropic Claude</h4>
+                                        <h4>บทความวิชาการเกี่ยวกับ Anthropic Claude</h4>
                                         <h4><a href="#" target="_blank" class="neon-text">อ่านเพิ่มเติม →</a></h4>
                                     </div>
                                 </div>
