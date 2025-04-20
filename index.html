@@ -809,21 +809,25 @@
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
-
-        // ตรวจสอบ Local Storage
+        
+        // ตรวจสอบ Local Storage และกำหนดค่าเริ่มต้นเป็นธีมสว่าง
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
+        
+        if (savedTheme === 'dark') {
+            body.classList.remove('light-mode');
+            themeToggle.textContent = '🌞 โหมดสว่าง';
+        } else {
             body.classList.add('light-mode');
             themeToggle.textContent = '🌙 โหมดกลางคืน';
         }
-
+        
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-mode');
             const isLightMode = body.classList.contains('light-mode');
-            
+        
             themeToggle.textContent = isLightMode ? '🌙 โหมดกลางคืน' : '🌞 โหมดสว่าง';
             localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-            
+        
             // อัพเดตสีไอคอน
             const icons = document.querySelectorAll('.icon');
             icons.forEach(icon => {
